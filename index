@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profil — Ghevino Aprianta Ginting</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --text: #e6eef6;
+      --accent: #6ee7b7;
+      --muted: #94a3b8;
+      --glass: rgba(255,255,255,0.04);
+    }
+
+    /* 🌞 Light Mode */
+    .light {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --accent: #2563eb;
+      --muted: #475569;
+      --glass: rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; transition: background .3s, color .3s }
+    html, body { height: 100%; margin: 0 }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      gap: 20px;
+
+      background: url("stars.png") repeat center center fixed, var(--bg);
+      background-size: 600px auto;
+      color: var(--text);
+
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 920px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .avatar {
+      background: linear-gradient(120deg, #0ea5a9, #7c3aed);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* 🌈 Animasi RGB untuk nama */
+    @keyframes rainbow {
+      0% { color: rgb(255,0,0); }
+      20% { color: rgb(255,127,0); }
+      40% { color: rgb(255,255,0); }
+      60% { color: rgb(0,255,0); }
+      80% { color: rgb(0,0,255); }
+      100% { color: rgb(139,0,255); }
+    }
+
+    .name { 
+      font-size: 20px; 
+      font-weight: 700; 
+      animation: rainbow 5s linear infinite; 
+    }
+
+    .role { font-size: 13px; color: var(--muted); margin-top: -4px }
+
+    .btn {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      font-size: 14px;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(2,6,23,0.3) }
+
+    .info { display: flex; flex-direction: column; gap: 12px; }
+    .about { background: var(--glass); padding: 14px; border-radius: 12px; font-size: 14px; }
+
+    .contacts { display: flex; gap: 8px; flex-wrap: wrap; }
+    .icon { width: 32px; height: 32px; display: grid; place-items: center; }
+
+    /* 🌗 Toggle button */
+    .toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: var(--glass);
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s;
+    }
+    .toggle:hover { background: rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+  <!-- 🌗 Tombol toggle -->
+  <button class="toggle" onclick="toggleMode()">🌙</button>
+
+  <main class="card">
+    <aside class="avatar">
+      <div class="name">Ghevino Aprianta Ginting</div>
+      <div class="role">Pegangguran</div>
+    </aside>
+
+    <section class="info">
+      <p class="about">Yo bitch come to my site </p>
+
+      <h3>Kontak & Sosial</h3>
+      <div class="contacts">
+        <a class="btn" href="https://t.me/arianasse"><span class="icon">📱</span>Telegram</a>
+        <a class="btn" href="mailto:ghevinoaprianta.com"><span class="icon">📧</span>Email</a>
+        <a class="btn" href="https://discord.gg/sonofnigga"><span class="icon">🎮</span>Discord</a>
+        <a class="btn" href="https://instagram.com/ar1anasse"><span class="icon">📸</span>Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+      const btn = document.querySelector(".toggle");
+      if (document.body.classList.contains("light")) {
+        btn.textContent = "🌙"; // Dark mode icon
+      } else {
+        btn.textContent = "☀️"; // Light mode icon
+      }
+    }
+  </script>
+</body>
+</html>
